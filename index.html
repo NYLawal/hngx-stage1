@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNGX Stage 1 Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <!-- Header section displaying picture and statement about me-->
+        <div id="headertext" class="flex-row">
+            <h1>Hi, I am <span data-testid="slackUserName">Nurah</span></h1>
+            <div id="mypict">
+                <img id="myphoto" src="images/mypic.jpg" alt="nurahawwal" data-testid="slackDisplayImage"/>
+            </div>
+        </div>
+        <hr>
+
+        <div id="midbody">
+          <ul>
+            <li> Current Day of the Week is: <span data-testid="currentDayOfTheWeek">Monday</span> </li>
+            <li> Current UTC Time in milliseconds is: <span id="utc-time" data-testid="CurrentUTCTime"></span> </li>
+            <li> Track: <span data-testid="myTrack">Frontend</span> </li>
+            <li> GitHub URL: <a href="https://github.com/NYLawal/hngx-stage1" data-testid="githubURL">view task</a> </li>
+          </ul>
+        </div>
+
+
+<script>
+   window.onload = setInterval(showTime, 1000); 
+   function showTime() {
+   let currentTime = new Date();
+   let currentTimeInMil = currentTime.getTime();
+   document.getElementById("utc-time").innerHTML = currentTimeInMil
+  }
+</script>
+   
+</body>
+</html>
